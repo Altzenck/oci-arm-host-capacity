@@ -9,14 +9,14 @@ on:
       - main
 
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/6 * * * *'
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-versions: ['7.4']
+        php-versions: ['8.2']
     name: integration-tests (PHP ${{ matrix.php-versions }})
     steps:
       - uses: actions/checkout@v1
@@ -42,6 +42,12 @@ jobs:
         run: |
           composer update --prefer-dist --no-progress
       - name: Run script
+        run: |
+          php index.php
+      - name: try2
+        run: |
+          php index.php
+      - name: try3
         run: |
           php index.php
         env:
